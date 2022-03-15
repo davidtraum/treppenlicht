@@ -16,8 +16,6 @@ void setup() {
   led.setBrightness(64); //Maximale Helligkeit
   led.clear();
   led.show();
-  turnOn();
-  turnOff();
 }
 
 // Liefert Rotwert (0-255) für die LED an der jeweiligen Stelle zurück.
