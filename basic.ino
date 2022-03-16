@@ -1,5 +1,5 @@
 
-// Einfacher Farbverlauf zwischen zwei Farben
+// Einfacher Farbverlauf zwischen zwei Farben (Grün nach Blau)
 
 #include <Adafruit_NeoPixel.h>
 
@@ -20,29 +20,17 @@ void setup() {
 
 // Liefert Rotwert (0-255) für die LED an der jeweiligen Stelle zurück.
 int getR(int index) {
-  if(index < NUM_LED * 0.5) {
-        return (index / (NUM_LED * 0.5)) * 255;
-  } else {
-    return 255 - ((index - (NUM_LED * 0.5)) / (NUM_LED * 0.5)) * 255;   
-  }
+  return 0;
 }
 
 // Liefert Grünwert (0-255) für die LED an der jeweiligen Stelle zurück.
 int getG(int index) {
-  if(index < NUM_LED * 0.5) {
-        return 255 - ((index / (NUM_LED * 0.5)) * 255);
-  } else {
-      return 0;
-  }
+  return ((float)index / NUM_LED) * 255;
 }
 
 // Liefert Blauwert (0-255) für die LED an der jeweiligen Stele zurück.
 int getB(int index) {
-  if(index < NUM_LED * 0.5) {
-    return 0;
-  }  else {
-    return ((index - (NUM_LED * 0.5)) / (NUM_LED * 0.5)) * 255;
-  }
+  return 255 - ((float)index / NUM_LED) * 255;
 }
 
 // Spielt die Aktivierungs-Animation ab.
